@@ -5,9 +5,9 @@ print("Hello world from python")
 csvlt = '\n'
 csvdel = ','
 csvquo = '"'
-with open('/data/in/tables/source.csv', mode='rt', encoding='utf-8') as in_file, \
-        open('/data/out/tables/odd.csv', mode='wt', encoding='utf-8') as odd_file, \
-        open('/data/out/tables/even.csv', mode='wt', encoding='utf-8') as even_file:
+with open('in/tables/bitcoin-price.csv', mode='rt', encoding='utf-8') as in_file, \
+        open('out/tables/odd.csv', mode='wt', encoding='utf-8') as odd_file, \
+        open('out/tables/even.csv', mode='wt', encoding='utf-8') as even_file:
     lazy_lines = (line.replace('\0', '') for line in in_file)
     reader = csv.DictReader(lazy_lines, lineterminator=csvlt, delimiter=csvdel,
                             quotechar=csvquo)
